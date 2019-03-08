@@ -5,7 +5,9 @@ function Nav() {
   return (
     <nav>
       <Navbar color="danger" dark expand="md">
-        <NavbarBrand href="/">MARVEL</NavbarBrand>
+        <NavbarBrand href="/" style={{ fontSize: "2rem" }}>
+          MARVEL
+        </NavbarBrand>
       </Navbar>
     </nav>
   );

@@ -1,5 +1,14 @@
 import React, { useState, useEffect } from "react";
-import "./Hero.css";
+import Loader from "../../assets/loader.gif";
+
+import { Badge } from "reactstrap";
+import { Link } from "react-router-dom";
+
+// get last part of the URL
+const getSeriesId = url => {
+  let index = url.lastIndexOf("/");
+  return url.substr(index);
+};
 
 const Hero = React.memo(function Hero(props) {
   const [hero, setHero] = useState();
@@ -19,42 +28,57 @@ const Hero = React.memo(function Hero(props) {
   }, [characterId]);
 
   console.log(hero);
+  // if (hero) {
+  //   let url = hero.series.items[0].resourceURI;
+  //   console.log(getSeriesId(url));
+  // }
 
-  return (
-    !isLoading && (
-      <div>
-        <div className="_title">
-          <img
-            src={`${hero.thumbnail.path}/detail.${hero.thumbnail.extension}`}
-            alt=""
-            className="image"
-          />
-          <h1 className="name ml-4">{hero.name}</h1>
+  return isLoading ? (
+    <img src={Loader} className="loader" alt="" />
+  ) : (
+    <div>
+      <div className="_title">
+        <img
+          src={`${hero.thumbnail.path}/detail.${hero.thumbnail.extension}`}
+          alt=""
+          className="image"
+        />
+        <h1 className="name ml-4">{hero.name}</h1>
+      </div>
+      <div className="container mt-5">
+        <div className="row">
+          <div className="col-md-8">
+            <h2>Description</h2>
+            <div className="dropdown-divider" />
+            {hero.description ? hero.description : "Not Available"}
+          </div>
         </div>
-        <div className="container mt-5">
-          {hero.description ? (
-            <div className="row">
-              <div className="col-md-8">
-                <h2>Description</h2>
-                <div className="dropdown-divider" />
-                {hero.description}
-              </div>
-            </div>
-          ) : (
-            ""
-          )}
+        {hero.series.available > 0 ? (
           <div className="row mt-5">
             <div className="col-md-6">
               <h2>Series</h2>
               <div className="dropdown-divider" />
               {hero.series.items.map(item => (
-                <p>{item.name}</p>
+                <Link
+                  key={item.name}
+                  to={`/series${getSeriesId(item.resourceURI)}`}
+                >
+                  <Badge
+                    className="mx-1"
+                    style={{ border: "0.5px solid #333" }}
+                    color="secondary"
+                  >
+                    {item.name}
+                  </Badge>
+                </Link>
               ))}
             </div>
           </div>
-        </div>
+        ) : (
+          ""
+        )}
       </div>
-    )
+    </div>
   );
 });
 

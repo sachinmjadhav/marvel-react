@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Nav from "./components/Navbar";
 import List from "./components/List";
 import Hero from "./components/Hero/Hero";
+import Series from "./components/Series/Series";
 
 function App() {
   return (
@@ -15,6 +16,11 @@ function App() {
           exact
           path="/character/:id"
           render={props => <Hero {...props} />}
+        />
+        <Route
+          exact
+          path="/series/:id"
+          render={props => <Series {...props} />}
         />
       </div>
     </Router>
