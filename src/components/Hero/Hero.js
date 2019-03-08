@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Hero.css";
 
-function Hero(props) {
+const Hero = React.memo(function Hero(props) {
   const [hero, setHero] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
@@ -29,11 +29,33 @@ function Hero(props) {
             alt=""
             className="image"
           />
-          <h1 className="name">{hero.name}</h1>
+          <h1 className="name ml-4">{hero.name}</h1>
+        </div>
+        <div className="container mt-5">
+          {hero.description ? (
+            <div className="row">
+              <div className="col-md-8">
+                <h2>Description</h2>
+                <div className="dropdown-divider" />
+                {hero.description}
+              </div>
+            </div>
+          ) : (
+            ""
+          )}
+          <div className="row mt-5">
+            <div className="col-md-6">
+              <h2>Series</h2>
+              <div className="dropdown-divider" />
+              {hero.series.items.map(item => (
+                <p>{item.name}</p>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     )
   );
-}
+});
 
 export default Hero;

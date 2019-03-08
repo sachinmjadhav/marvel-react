@@ -11,7 +11,11 @@ function App() {
       <div className="App">
         <Nav />
         <Route exact path="/" render={props => <List {...props} />} />
-        <Route exact path="/character/:id" component={Hero} />
+        <Route
+          exact
+          path="/character/:id"
+          render={props => <Hero {...props} />}
+        />
       </div>
     </Router>
   );
