@@ -16,7 +16,7 @@ function HeroCard({ hero }) {
         />
         <div className="_bar" />
         <CardBody className="_body">
-          <CardTitle style={{ textDecoration: "none" }}>{hero.name}</CardTitle>
+          <CardTitle className="title">{hero.name}</CardTitle>
         </CardBody>
       </Card>
     </React.Fragment>

@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import "./Series.css";
 import Loader from "../../assets/loader.gif";
 
-function Series(props) {
+const Series = React.memo(function Series(props) {
+  // get id from router params
   let id = props.match.params.id;
 
-  const [series, setSeries] = useState();
+  const [series, setSeries] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -18,10 +19,6 @@ function Series(props) {
         setIsLoading(false);
       });
   }, [id]);
-
-  if (series) {
-    console.log(series);
-  }
 
   return isLoading ? (
     <img src={Loader} className="loader" alt="" />
@@ -46,6 +43,6 @@ function Series(props) {
       </div>
     </div>
   );
-}
+});
 
 export default Series;

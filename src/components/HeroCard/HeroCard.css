@@ -30,3 +30,7 @@
   background: #dc3545;
   color: white;
 }
+
+._card:hover .title {
+  text-decoration: underline;
+}

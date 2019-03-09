@@ -7,6 +7,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  height: 100%;
 }
 
 code {
@@ -21,7 +22,7 @@ code {
 }
 
 ._title {
-  height: 400px;
+  height: 50vh;
   background: #333;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -32,7 +33,7 @@ code {
 ._title::after {
   content: "";
   position: absolute;
-  top: 350px;
+  top: 40vh;
   left: -10px;
   width: 105vw;
   height: 100px;
@@ -42,7 +43,7 @@ code {
 }
 
 ._title .image {
-  height: 350px;
+  width: 80%;
   justify-self: end;
   align-self: center;
   grid-column-start: 1;
@@ -56,4 +57,26 @@ code {
   align-self: center;
   grid-column-start: 2;
   grid-column-end: 4;
+}
+
+@media (max-width: 480px) {
+  ._title {
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+  }
+  ._title .image {
+    width: 40%;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    align-self: center;
+    justify-self: center;
+  }
+  ._title .name {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
 }

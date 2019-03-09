@@ -45,7 +45,7 @@ const Hero = React.memo(function Hero(props) {
         />
         <h1 className="name ml-4">{hero.name}</h1>
       </div>
-      <div className="container mt-5">
+      <div className="container mt-5 mb-3">
         <div className="row">
           <div className="col-md-8">
             <h2>Description</h2>
