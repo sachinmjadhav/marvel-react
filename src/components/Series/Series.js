@@ -6,7 +6,7 @@ const Series = React.memo(function Series(props) {
   // get id from router params
   let id = props.match.params.id;
 
-  const [series, setSeries] = useState({});
+  const [series, setSeries] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -20,6 +20,19 @@ const Series = React.memo(function Series(props) {
       });
   }, [id]);
 
+  // useEffect for title
+  useEffect(() => {
+    if (series) {
+      document.title = series.title;
+    } else {
+      document.title = "Marvel";
+    }
+    // change title to Marvel on component unmount
+    return () => {
+      document.title = "Marvel";
+    };
+  }, [series]);
+
   return isLoading ? (
     <img src={Loader} className="loader" alt="" />
   ) : (
@@ -29,6 +42,7 @@ const Series = React.memo(function Series(props) {
           src={`${series.thumbnail.path}/detail.${series.thumbnail.extension}`}
           alt=""
           className="image"
+          style={{ maxHeight: "40vh" }}
         />
         <h1 className="name ml-4">{series.title}</h1>
       </div>

@@ -22,13 +22,17 @@ const List = React.memo(function List({ isLoading, heros, setCount }) {
           MARVEL CHARACTERS LIST
         </h2>
         <Search setSearching={setSearching} setSearchResult={setSearchResult} />
+        {/* if searching === true, show search results else show general list */}
         {searching ? (
+          // show a loader before data is loaded
           !searchResult ? (
             <img src={Loader} alt="" />
           ) : (
+            // list of search results
             <Landing heros={searchResult.results} />
           )
         ) : (
+          // general list
           <Landing heros={heros} setCount={setCount} />
         )}
       </div>

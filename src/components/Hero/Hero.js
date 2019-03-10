@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Loader from "../../assets/loader.gif";
-
 import { Badge } from "reactstrap";
 import { Link } from "react-router-dom";
+import "./Hero.css";
 
 // get last part of the URL
 const getSeriesId = url => {
@@ -27,11 +27,18 @@ const Hero = React.memo(function Hero(props) {
       });
   }, [characterId]);
 
-  console.log(hero);
-  // if (hero) {
-  //   let url = hero.series.items[0].resourceURI;
-  //   console.log(getSeriesId(url));
-  // }
+  // useEffect for title
+  useEffect(() => {
+    if (hero) {
+      document.title = hero.name;
+    } else {
+      document.title = "Marvel";
+    }
+    // change title to Marvel on component unmount
+    return () => {
+      document.title = "Marvel";
+    };
+  }, [hero]);
 
   return isLoading ? (
     <img src={Loader} className="loader" alt="" />
@@ -43,7 +50,7 @@ const Hero = React.memo(function Hero(props) {
           alt=""
           className="image"
         />
-        <h1 className="name ml-4">{hero.name}</h1>
+        <h1 className="name ml-4 name">{hero.name}</h1>
       </div>
       <div className="container mt-5 mb-3">
         <div className="row">

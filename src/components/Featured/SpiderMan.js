@@ -35,7 +35,9 @@ function SpiderMan() {
       </Link>
     </React.Fragment>
   ) : (
-    <ClipLoader size={100} color={"#333"} />
+    <div className="_card">
+      <ClipLoader size={100} color={"#333"} />
+    </div>
   );
 }
 

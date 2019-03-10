@@ -34,7 +34,7 @@ function Search({ setSearching, setSearchResult }) {
     <form onSubmit={handleSubmit}>
       <InputGroup size="md" className="ml-3 mb-4 input_group">
         <InputGroupAddon addonType="prepend" className="icon">
-          <i class="fas fa-search" />
+          <i className="fas fa-search" />
         </InputGroupAddon>
         <Input placeholder="Search" className="search" onChange={handleInput} />
       </InputGroup>

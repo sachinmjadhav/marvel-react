@@ -111,6 +111,7 @@ code {
   }
   ._title .image {
     margin-top: 10px;
+    max-height: 20vh !important;
     width: 40%;
     grid-column-start: 1;
     grid-column-end: 2;
