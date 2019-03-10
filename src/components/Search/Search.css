@@ -17,3 +17,9 @@
   top: 10px;
   left: -5px;
 }
+
+@media (max-width: 480px) {
+  .input_group {
+    width: 80%;
+  }
+}

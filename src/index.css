@@ -127,4 +127,15 @@ code {
     grid-column-start: 1;
     grid-column-end: 2;
   }
+  ._title-bars {
+    text-align: center;
+  }
+  ._title-bars::before {
+    left: 60%;
+    top: 0%;
+  }
+  ._title-bars::after {
+    left: 32%;
+    top: 90%;
+  }
 }

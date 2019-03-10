@@ -5,13 +5,11 @@ import "./Navbar.css";
 
 function Nav() {
   return (
-    <nav>
-      <Navbar className="navbar" dark expand="md">
-        <NavbarBrand href="/" className="mx-auto brand">
-          <img src={logo} alt="" className="img" />
-        </NavbarBrand>
-      </Navbar>
-    </nav>
+    <Navbar className="navbar" dark expand="md">
+      <NavbarBrand href="/" className="mx-auto brand">
+        <img src={logo} alt="" className="img" />
+      </NavbarBrand>
+    </Navbar>
   );
 }
 

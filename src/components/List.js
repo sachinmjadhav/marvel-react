@@ -10,17 +10,17 @@ const List = React.memo(function List({ isLoading, heros, setCount }) {
   const [searching, setSearching] = useState(false);
   const [searchResult, setSearchResult] = useState();
 
-  console.log(searchResult);
-
   return isLoading ? (
     <img src={Loader} className="loader" alt="" />
   ) : (
     <div>
       <Poster />
-      <div className="container mt-5">
+      <div className="container mt-5 mx-0">
         <Featured />
         <div className="dropdown-divider" />
-        <h2 className="py-2 mt-5 _title-bars">MARVEL CHARACTERS LIST</h2>
+        <h2 className="py-2 mt-5 _title-bars list-title">
+          MARVEL CHARACTERS LIST
+        </h2>
         <Search setSearching={setSearching} setSearchResult={setSearchResult} />
         {searching ? (
           !searchResult ? (
