@@ -1,0 +1,19 @@
+.input_group {
+  width: 40%;
+}
+.search {
+  border: none;
+  border-bottom: 1px solid #333;
+  border-radius: 0;
+}
+
+.search::placeholder {
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.icon {
+  position: relative;
+  top: 10px;
+  left: -5px;
+}

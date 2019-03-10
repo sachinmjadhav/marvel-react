@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Search from "./Search";
+import Search from "./Search/Search";
 import Loader from "../assets/loader.gif";
 import Landing from "./Landing";
 import Poster from "./Poster/Poster";
