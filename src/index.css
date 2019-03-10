@@ -8,6 +8,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   height: 100%;
+  font-size: 13px;
+}
+body h2 {
+  font-size: 30px;
 }
 
 code {
@@ -21,8 +25,13 @@ code {
   transform: translate(-50%, -50%);
 }
 
+.title {
+  font-size: 1.2rem;
+}
+
 ._title {
-  height: 50vh;
+  height: 40vh;
+  width: 100vw;
   background: #333;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -33,17 +42,16 @@ code {
 ._title::after {
   content: "";
   position: absolute;
-  top: 40vh;
-  left: -10px;
+  top: calc(40vh - 10px);
   width: 105vw;
-  height: 100px;
+  height: 110px;
   background: #333;
   z-index: -1;
-  transform: rotate(-3deg);
+  clip-path: polygon(0 100%, 100% 10px, 100% 0, 0 0);
 }
 
 ._title .image {
-  width: 80%;
+  max-width: 70%;
   justify-self: end;
   align-self: center;
   grid-column-start: 1;
@@ -59,12 +67,50 @@ code {
   grid-column-end: 4;
 }
 
+._title-bars {
+  position: relative;
+  line-height: 1;
+  margin-bottom: 15px;
+}
+
+._title-bars::before {
+  background-color: #c6a972;
+  content: "";
+  display: block;
+  height: 2px;
+  position: absolute;
+  transform: rotate(-45deg) skew(45deg);
+  width: 30px;
+  left: 50px;
+  top: 1px;
+  transform-origin: left bottom;
+}
+
+._title-bars::after {
+  background-color: #c6a972;
+  content: "";
+  display: block;
+  height: 2px;
+  position: absolute;
+  transform: rotate(-45deg) skew(45deg);
+  width: 30px;
+  left: -25px;
+  top: calc(90% + 1px);
+  transform-origin: right top;
+}
+
 @media (max-width: 480px) {
   ._title {
+    height: 45vh;
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: 1fr;
   }
+  ._title::after {
+    top: calc(45vh - 10px);
+    height: 60px;
+  }
   ._title .image {
+    margin-top: 10px;
     width: 40%;
     grid-column-start: 1;
     grid-column-end: 2;
@@ -74,6 +120,8 @@ code {
     justify-self: center;
   }
   ._title .name {
+    align-self: center;
+    justify-self: center;
     grid-row-start: 2;
     grid-row-end: 3;
     grid-column-start: 1;

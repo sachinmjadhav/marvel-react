@@ -65,7 +65,7 @@ const Hero = React.memo(function Hero(props) {
                 >
                   <Badge
                     className="mx-1"
-                    style={{ border: "0.5px solid #333" }}
+                    style={{ fontSize: "0.8rem", margin: "2px" }}
                     color="secondary"
                   >
                     {item.name}

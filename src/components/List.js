@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Search from "./Search";
 import Loader from "../assets/loader.gif";
 import Landing from "./Landing";
+import Poster from "./Poster/Poster";
+import Featured from "./Featured/Featured";
 import Footer from "../Footer";
 
 const List = React.memo(function List({ isLoading, heros, setCount }) {
@@ -14,7 +16,11 @@ const List = React.memo(function List({ isLoading, heros, setCount }) {
     <img src={Loader} className="loader" alt="" />
   ) : (
     <div>
+      <Poster />
       <div className="container mt-5">
+        <Featured />
+        <div className="dropdown-divider" />
+        <h2 className="py-2 mt-5 _title-bars">MARVEL CHARACTERS LIST</h2>
         <Search setSearching={setSearching} setSearchResult={setSearchResult} />
         {searching ? (
           !searchResult ? (

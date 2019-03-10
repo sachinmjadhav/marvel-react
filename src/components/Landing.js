@@ -11,11 +11,7 @@ function Landing({ heros, setCount }) {
           <h2>Not results found</h2>
         ) : (
           heros.map(hero => (
-            <div
-              className="col-md-3 col-sm-6 mb-3 w-80"
-              style={{ alignItems: "center", justifyContent: "center" }}
-              key={hero.id}
-            >
+            <div className="col-lg-3 col-md-4 col-sm-6 mb-3" key={hero.id}>
               <Link to={`/character/${hero.id}`}>
                 <HeroCard hero={hero} />
               </Link>
