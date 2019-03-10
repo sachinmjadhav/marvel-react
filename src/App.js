@@ -13,7 +13,7 @@ function App() {
 
   useEffect(() => {
     fetch(
-      `http://gateway.marvel.com/v1/public/characters?limit=20&offset=${count}&ts=1551892957053&apikey=ed0db551a956a22bc791744a20041f60&hash=28c71675f79648ff557cf218a277715f`
+      `https://gateway.marvel.com/v1/public/characters?limit=20&offset=${count}&ts=1551892957053&apikey=ed0db551a956a22bc791744a20041f60&hash=28c71675f79648ff557cf218a277715f`
     )
       .then(res => res.json())
       .then(data => {

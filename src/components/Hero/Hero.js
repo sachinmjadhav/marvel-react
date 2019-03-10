@@ -18,7 +18,7 @@ const Hero = React.memo(function Hero(props) {
 
   useEffect(() => {
     fetch(
-      `http://gateway.marvel.com/v1/public/characters/${characterId}?ts=1551892957053&apikey=ed0db551a956a22bc791744a20041f60&hash=28c71675f79648ff557cf218a277715f`
+      `https://gateway.marvel.com/v1/public/characters/${characterId}?ts=1551892957053&apikey=ed0db551a956a22bc791744a20041f60&hash=28c71675f79648ff557cf218a277715f`
     )
       .then(res => res.json())
       .then(data => {
