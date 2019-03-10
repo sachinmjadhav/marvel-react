@@ -15,7 +15,7 @@ const List = React.memo(function List({ isLoading, heros, setCount }) {
   ) : (
     <div>
       <Poster />
-      <div className="container mt-5 mx-0">
+      <div className="container mt-5 ">
         <Featured />
         <div className="dropdown-divider" />
         <h2 className="py-2 mt-5 _title-bars list-title">
