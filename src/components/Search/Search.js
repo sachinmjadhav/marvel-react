@@ -13,7 +13,6 @@ function Search({ setSearching, setSearchResult }) {
   const handleSubmit = e => {
     e.preventDefault();
     setUrl(input);
-    setInput("");
     setSearching(true);
   };
 
