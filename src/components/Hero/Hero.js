@@ -4,7 +4,7 @@ import { Badge } from "reactstrap";
 import { Link } from "react-router-dom";
 import "./Hero.css";
 
-// get last part of the URL
+// get last part of the URL (character ID)
 const getSeriesId = url => {
   let index = url.lastIndexOf("/");
   return url.substr(index);
