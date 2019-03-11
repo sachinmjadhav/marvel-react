@@ -50,7 +50,7 @@ const Hero = React.memo(function Hero(props) {
           alt=""
           className="image"
         />
-        <h1 className="name ml-4 name">{hero.name}</h1>
+        <h1 className="name ml-4 name _title-bars">{hero.name}</h1>
       </div>
       <div className="container mt-5 mb-3">
         <div className="row">

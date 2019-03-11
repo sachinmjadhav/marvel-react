@@ -137,6 +137,6 @@ code {
   }
   ._title-bars::after {
     left: 32%;
-    top: 90%;
+    top: 100%;
   }
 }
